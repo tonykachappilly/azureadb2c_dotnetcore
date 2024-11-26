@@ -1,0 +1,3 @@
+﻿<Project>
+  <Import Project="..\buildMultiTargeting\azureadpoc_dotnetcore.props" />
+</Project>
