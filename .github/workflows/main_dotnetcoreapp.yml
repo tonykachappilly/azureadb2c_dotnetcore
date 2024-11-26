@@ -22,10 +22,10 @@ jobs:
           dotnet-version: '8.x'
 
       - name: Build with dotnet
-        run: dotnet build WebApp-OpenIDConnect-DotNet.csproj --configuration Release
+        run: dotnet build --configuration Release
 
       - name: dotnet publish
-        run: dotnet publish WebApp-OpenIDConnect-DotNet.csproj -c Release -o "${{env.DOTNET_ROOT}}/myapp" -f net8.0
+        run: dotnet publish -c Release -o "${{env.DOTNET_ROOT}}/myapp"
 
       - name: Upload artifact for deployment job
         uses: actions/upload-artifact@v4
@@ -51,9 +51,9 @@ jobs:
       - name: Login to Azure
         uses: azure/login@v2
         with:
-          client-id: ${{ secrets.AZUREAPPSERVICE_CLIENTID_5A12F3E9D7CD4E8DB75C8236B1B52307 }}
-          tenant-id: ${{ secrets.AZUREAPPSERVICE_TENANTID_F957B0CE0E4D4C2489867C06A1A9F5FF }}
-          subscription-id: ${{ secrets.AZUREAPPSERVICE_SUBSCRIPTIONID_D54D7672E29142CA912D6ED381676FDF }}
+          client-id: ${{ secrets.AZUREAPPSERVICE_CLIENTID_F62BC46645CC4A94B682C0D939EA8DDD }}
+          tenant-id: ${{ secrets.AZUREAPPSERVICE_TENANTID_A445E25559B840BB961477B1DD64F436 }}
+          subscription-id: ${{ secrets.AZUREAPPSERVICE_SUBSCRIPTIONID_7E515E69FCB545B0B34CE6F65F2E769A }}
 
       - name: Deploy to Azure Web App
         id: deploy-to-webapp
