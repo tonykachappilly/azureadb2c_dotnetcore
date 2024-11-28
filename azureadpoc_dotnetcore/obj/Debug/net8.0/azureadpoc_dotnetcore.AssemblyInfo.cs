@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("azureadpoc_dotnetcore")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+d50bcb31d6bd135e91dddbbcc7a92c8bec440523")]
 [assembly: System.Reflection.AssemblyProductAttribute("azureadpoc_dotnetcore")]
 [assembly: System.Reflection.AssemblyTitleAttribute("azureadpoc_dotnetcore")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

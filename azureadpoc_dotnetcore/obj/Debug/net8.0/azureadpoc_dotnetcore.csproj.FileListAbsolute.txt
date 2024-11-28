@@ -74,3 +74,8 @@ C:\Dev\Azure_AD_POC\azureadpoc_dotnetcore\azureadpoc_dotnetcore\bin\Debug\net8.0
 C:\Dev\Azure_AD_POC\azureadpoc_dotnetcore\azureadpoc_dotnetcore\bin\Debug\net8.0\Pages\Shared\_Layout.cshtml
 C:\Dev\Azure_AD_POC\azureadpoc_dotnetcore\azureadpoc_dotnetcore\bin\Debug\net8.0\Pages\Shared\_LoginPartial.cshtml
 C:\Dev\Azure_AD_POC\azureadpoc_dotnetcore\azureadpoc_dotnetcore\bin\Debug\net8.0\Pages\Shared\_ValidationScriptsPartial.cshtml
+C:\Dev\Azure_AD_POC\azureadpoc_dotnetcore\azureadpoc_dotnetcore\bin\Debug\net8.0\Controllers\AuthController.cs
+C:\Dev\Azure_AD_POC\azureadpoc_dotnetcore\azureadpoc_dotnetcore\bin\Debug\net8.0\EntityFramework.SqlServer.dll
+C:\Dev\Azure_AD_POC\azureadpoc_dotnetcore\azureadpoc_dotnetcore\bin\Debug\net8.0\EntityFramework.dll
+C:\Dev\Azure_AD_POC\azureadpoc_dotnetcore\azureadpoc_dotnetcore\bin\Debug\net8.0\System.Web.Providers.dll
+C:\Dev\Azure_AD_POC\azureadpoc_dotnetcore\azureadpoc_dotnetcore\obj\Debug\net8.0\azureadpoc_dotnetcore.sourcelink.json
