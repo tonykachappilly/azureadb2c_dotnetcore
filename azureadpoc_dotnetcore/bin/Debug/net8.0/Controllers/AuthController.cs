@@ -32,9 +32,9 @@ namespace azureadpoc_dotnetcore.Controllers
             await HttpContext.SignOutAsync("OpenIdConnect");
             _logger.LogInformation("Signout was called");
             var callbackUrl = Url.Action("Index", "Home", values: null, protocol: Request.Scheme);
-            var signOutUrl = $"https://tonykachappillyb2c.b2clogin.com/tonykachappillyb2c.onmicrosoft.com/B2C_1A_signup_signin/oauth2/v2.0/logout?post_logout_redirect_uri={callbackUrl}";
+            //var signOutUrl = $"https://tonykachappillyb2c.b2clogin.com/tonykachappillyb2c.onmicrosoft.com/B2C_1A_signup_signin/oauth2/v2.0/logout?post_logout_redirect_uri={callbackUrl}";
             //var signOutUrl = $"{_openIdConnectOptions.Value.Authority}/oauth2/v2.0/logout?post_logout_redirect_uri={callbackUrl}";
-            return Redirect(signOutUrl);
+            return Redirect(callbackUrl);
         }
     }
 }

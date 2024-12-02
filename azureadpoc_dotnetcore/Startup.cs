@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Authentication.OpenIdConnect;
+﻿using Microsoft.AspNetCore.Authentication.Cookies;
+using Microsoft.AspNetCore.Authentication.OpenIdConnect;
 using Microsoft.Identity.Web;
 using Microsoft.Identity.Web.UI;
 using Microsoft.IdentityModel.Logging;
@@ -27,8 +28,32 @@ namespace azureadpoc_dotnetcore
                 options.HandleSameSiteCookieCompatibility();
             });
 
+            services.ConfigureApplicationCookie(options =>
+            {
+                options.Cookie.SameSite = SameSiteMode.None;
+                options.Cookie.SecurePolicy = CookieSecurePolicy.Always;
+            });
             // Configuration to sign-in users with Azure AD B2C
-            services.AddMicrosoftIdentityWebAppAuthentication(Configuration, Constants.AzureAdB2C);
+            services.AddAuthentication(options =>
+            {
+                options.DefaultScheme = CookieAuthenticationDefaults.AuthenticationScheme;
+                options.DefaultChallengeScheme = OpenIdConnectDefaults.AuthenticationScheme;
+            })
+            // .AddMicrosoftIdentityWebApp(Configuration, Constants.AzureAdB2C, OpenIdConnectDefaults.AuthenticationScheme, CookieAuthenticationDefaults.AuthenticationScheme);
+            .AddMicrosoftIdentityWebApp(
+                    configureMicrosoftIdentityOptions: options =>
+                    {
+                        Configuration.Bind(Constants.AzureAdB2C, options);
+                    },
+                    configureCookieAuthenticationOptions: options =>
+                    {
+                        options.Cookie.SameSite = SameSiteMode.None;
+                        options.Cookie.SecurePolicy = CookieSecurePolicy.Always; // Ensure cookies are only sent over HTTPS
+                    },
+                    openIdConnectScheme: OpenIdConnectDefaults.AuthenticationScheme,
+                    cookieScheme: CookieAuthenticationDefaults.AuthenticationScheme,
+                    subscribeToOpenIdConnectMiddlewareDiagnosticsEvents: false,
+                    displayName: null);
 
             services.AddControllersWithViews()
                 .AddMicrosoftIdentityUI();
